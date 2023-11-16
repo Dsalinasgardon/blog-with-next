@@ -11,7 +11,6 @@ export interface DocumentProps {
   withSize?: boolean
 }
 
-<<<<<<< HEAD
 const formatFileSize = (bytes: number) => {
   if (!bytes) return ''
   if (bytes < 1) {
@@ -21,17 +20,6 @@ const formatFileSize = (bytes: number) => {
     return `${bytes.toFixed(0)} B`
   } else {
     return `${(bytes / 1024).toFixed(0)} KB`
-=======
-const formatFileSize = (kilobytes: number) => {
-  if (!kilobytes) return ''
-  if (kilobytes < 1) {
-    return `${kilobytes.toFixed(1)} KB`
-  }
-  if (kilobytes < 1024) {
-    return `${kilobytes.toFixed(0)} KB`
-  } else {
-    return `${(kilobytes / 1024).toFixed(0)} MB`
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
   }
 }
 

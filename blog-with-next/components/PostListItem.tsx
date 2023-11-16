@@ -1,10 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-<<<<<<< HEAD
-import { types, Image } from 'react-bricks/frontend'
-=======
 import { types } from 'react-bricks/frontend'
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
 import dayjs from 'dayjs'
 
 interface PostListItemProps {
@@ -13,11 +9,7 @@ interface PostListItemProps {
   content: string
   author: types.Author
   date: string
-<<<<<<< HEAD
-  featuredImg?: types.IImageSource
-=======
   featuredImg?: string
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
 }
 
 const PostListItem: React.FC<PostListItemProps> = ({
@@ -33,28 +25,13 @@ const PostListItem: React.FC<PostListItemProps> = ({
       href={`/blog/post/${href}`}
       className="flex flex-col hover:-translate-y-2 transition-transform duration-300"
     >
-<<<<<<< HEAD
-      <Image
-        readonly
-        source={featuredImg}
-        alt="Blog article featured image"
-        imageClassName="aspect-video object-cover rounded-sm"
-      />
-=======
       <img src={featuredImg} className="aspect-video object-cover rounded-sm" />
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
 
       {/* justify-between */}
       <div className="flex flex-col h-full">
         <div className="my-6">
           <h3 className="font-bold text-xl dark:text-white">{title}</h3>
-<<<<<<< HEAD
-          <p className="mt-2 leading-6 text-gray-800 dark:text-gray-100">
-            {content}
-          </p>
-=======
           <p className="mt-2 leading-6 text-gray-800 dark:text-gray-100">{content}</p>
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
         </div>
 
         <div className="flex items-center space-x-4">
@@ -73,8 +50,6 @@ const PostListItem: React.FC<PostListItemProps> = ({
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-=======
 
       {/* <div className="flex-1 my-4 bg-gray-100 block group py-4 text-gray-900 hover:bg-gray-50 transition-colors duration-300 p-6 -m-6 rounded">
         <div className="flex items-center space-x-4">
@@ -86,7 +61,6 @@ const PostListItem: React.FC<PostListItemProps> = ({
         </div>
         </div>
       </div> */}
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
     </Link>
   )
 }

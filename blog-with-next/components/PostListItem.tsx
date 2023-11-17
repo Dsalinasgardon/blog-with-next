@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { types } from 'react-bricks/frontend'
+import { types, Image} from 'react-bricks/frontend'
 import dayjs from 'dayjs'
 
 interface PostListItemProps {
@@ -9,7 +9,7 @@ interface PostListItemProps {
   content: string
   author: types.Author
   date: string
-  featuredImg?: string
+  featuredImg?: types.IImageSource
 }
 
 const PostListItem: React.FC<PostListItemProps> = ({
@@ -25,7 +25,7 @@ const PostListItem: React.FC<PostListItemProps> = ({
       href={`/blog/post/${href}`}
       className="flex flex-col hover:-translate-y-2 transition-transform duration-300"
     >
-      <img src={featuredImg} className="aspect-video object-cover rounded-sm" />
+      <Image readonly source={featuredImg} imageClassName="aspect-video object-cover rounded-sm" alt=""/>
 
       {/* justify-between */}
       <div className="flex flex-col h-full">

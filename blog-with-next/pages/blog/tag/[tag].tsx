@@ -89,11 +89,7 @@ const Page: React.FC<PageProps> = ({
                     content={post.meta.description}
                     author={post.author}
                     date={post.publishedAt}
-<<<<<<< HEAD
                     featuredImg={post.meta.image}
-=======
-                    featuredImg={post.meta.featuredImage || ''}
->>>>>>> 6a6e59f9f9a6c7f8c0cc23a7e6c4e5c572b25111
                   />
                 ))}
               </div>

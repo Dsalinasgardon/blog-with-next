@@ -7,11 +7,10 @@ interface ThumbnailProps {
   bgColor: types.IColor
 }
 
-const Thumbnail: types.Brick<ThumbnailProps> = ({ hasShadow, bgColor,  ...rest }) => {
+const Thumbnail: types.Brick<ThumbnailProps> = ({ hasShadow, bgColor }) => {
   return (
     <div
-    {...rest}
-      className={`my-6 mx-6 p-6 text-center w-1/3 border rounded-lg ${
+      className={`my-6 mx-auto p-6 text-center border rounded-lg max-w-sm ${
         hasShadow ? 'shadow-xl' : ''
       } ${bgColor?.className}`}
     >
@@ -55,7 +54,7 @@ Thumbnail.schema = {
     title: 'Hello, world!',
     description: 'Lorem ipsum dolor sit amet.',
     hasShadow: true,
-    bgColor: { color: '#ffffff', className: 'bg-white' }
+    bgColor: { color: '#ffffff', className: 'bg-white' },
   }),
   sideEditProps: [
     {
@@ -78,12 +77,9 @@ Thumbnail.schema = {
             label: 'Light blue',
             value: { color: '#eff6ff', className: 'bg-blue-50' },
           },
-
-        
         ],
       },
     },
-
   ],
 }
 

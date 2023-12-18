@@ -1,3 +1,6 @@
+// troubleshoot this and tell me why it isn't rendering in React Bricks
+
+
 import { types } from 'react-bricks/frontend'
 
 const pageTypes: types.IPageType[] = [
@@ -41,6 +44,27 @@ const pageTypes: types.IPageType[] = [
         .catch((error) => {
           console.log(error)
           return {}
+        }),
+  },
+  {
+    name: 'cat',
+    pluralName: 'cats',
+    getExternalData: (page) =>
+      fetch(`https://api.thecatapi.com/v1/breeds/search?q=${page.slug}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data[0] && data[0].reference_image_id) {
+            return {
+              ...data[0],
+              imageUrl: `https://cdn2.thecatapi.com/images/${data[0].reference_image_id}.jpg`,
+            };
+          } else {
+            throw new Error('Cat not found');
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          return {};
         }),
   },
   {

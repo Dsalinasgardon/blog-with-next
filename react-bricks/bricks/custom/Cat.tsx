@@ -42,11 +42,12 @@ Cat.schema = {
     name: externalData.name,
     description: externalData.description,
     temperament: externalData.temperament,
-    imageUrl: externalData.imageUrl, 
+    imageUrl: externalData.imageUrl,    
   }),
 
   // Sidebar Edit controls for props
   sideEditProps: [],
+
 }
 
 export default Cat

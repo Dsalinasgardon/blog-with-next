@@ -1,6 +1,3 @@
-// troubleshoot this and tell me why it isn't rendering in React Bricks
-
-
 import { types } from 'react-bricks/frontend'
 
 const pageTypes: types.IPageType[] = [

@@ -209,9 +209,17 @@ HeroUnit2.schema = {
       groupName: 'Title',
       defaultOpen: true,
       props: [textGradientEditProps, highlightTextEditProps],
+      show: (props, page, user) => {
+        // Only show the props to users with the 'blog_editor' role
+        if (user?.customRole?.id === 'blog_editor') {
+          return true
+        } else {
+          return false
+        }
+      },
+      backgroundWithImageBgSideGroup,
+      paddingBordersSideGroup,
     },
-    backgroundWithImageBgSideGroup,
-    paddingBordersSideGroup,
   ],
   stories: [
     {

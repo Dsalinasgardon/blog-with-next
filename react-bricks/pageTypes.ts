@@ -43,6 +43,7 @@ const pageTypes: types.IPageType[] = [
           return {}
         }),
   },
+  //cat page type
   {
     name: 'cat',
     pluralName: 'cats',

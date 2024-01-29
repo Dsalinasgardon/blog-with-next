@@ -28,11 +28,12 @@ const ReactBricksApp = ({ Component, pageProps }: AppProps) => {
     contentClassName: `antialiased font-content ${colorMode} ${
       colorMode === 'dark' ? 'dark bg-gray-900' : 'light bg-white'
     }`,
+    
   }
 
   return (
     <ReactBricks {...reactBricksConfig}>
-      <Component {...pageProps} />
+      <Component  {...pageProps} />
     </ReactBricks>
   )
 }

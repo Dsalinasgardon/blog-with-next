@@ -93,6 +93,14 @@ MyHeroUnit.schema = {
           { value: 'small', label: 'Small Padding' },
         ],
       },
+      show: (props, page, user) => {
+        // Only show the 'padding' prop to users with the 'blog_editor' role
+        if (user?.customRole?.id === 'blog_editor') {
+          return true
+        } else {
+          return false
+        }
+      },
     },
   ],
 }

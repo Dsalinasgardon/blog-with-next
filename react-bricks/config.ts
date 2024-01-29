@@ -37,7 +37,38 @@ const config: types.ReactBricksConfig = {
   unsplashApiKey: '',
   enablePreviewImage: true,
   enableDefaultEmbedBrick: true,
-  //permissions,  Fine-grained permissions for enterprise plans
+  permissions: {
+    canAddPage: (user, pageType) => {
+      // Only 'blog_editor' can add 'blog' pages
+      if (user?.customRole?.id === 'blog_editor' && pageType !== 'blog') {
+        return false
+      }
+      return true
+    },
+    canEditPage: (user, page) => {
+      // 'translator_fr' can only edit pages in 'Draft' or 'Pending Approval' state
+      if (
+        user?.customRole?.id === 'translator_fr' &&
+        page.status === 'Published'
+      ) {
+        return false
+      }
+      return true
+    },
+    canPublishPage: (user, page) => {
+      // Only 'blog_editor' can publish pages
+      if (user?.customRole?.id !== 'blog_editor') {
+        return false
+      }
+      return true
+    },
+    canDeletePage: (user, pageType) => {
+      // 'translator_fr' cannot delete any page
+      if (user?.customRole?.id === 'translator_fr') {
+        return false
+      }
+      return true
+    },
+  },
 }
-
 export default config
